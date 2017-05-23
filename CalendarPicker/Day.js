@@ -124,7 +124,10 @@ export default function Day(props) {
         style={[
           styles.dayButton,
           isMark
-            ? { ...styles.circleDayButton, ...selectedMarkedDaysColorStyle }
+            ? Object.assign(
+                styles.circleDayButton,
+                selectedMarkedDaysColorStyle
+              )
             : {},
           daySelectedStyle
         ]}

@@ -123,12 +123,8 @@ export default function Day(props) {
       <TouchableOpacity
         style={[
           styles.dayButton,
-          isMark
-            ? Object.assign(
-                styles.circleDayButton,
-                selectedMarkedDaysColorStyle
-              )
-            : {},
+          isMark ? styles.circleDayButton : {},
+          isMark ? selectedMarkedDaysColorStyle : {},
           daySelectedStyle
         ]}
         onPress={() => onPressDay(day)}

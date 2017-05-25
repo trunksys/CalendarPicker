@@ -74,7 +74,8 @@ export function makeStyles(
     },
 
     daysWrapper: {
-      alignSelf: "center"
+      alignSelf: "center",
+      height: 40 * 6 * scaler
     },
 
     dayLabels: {

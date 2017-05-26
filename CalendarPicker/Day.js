@@ -19,7 +19,10 @@ export default function Day(props) {
     selectedMarkedDaysColorStyle,
     selectedMarkedDaysTextColorStyle,
     startDayStyle,
-    endDayStyle
+    endDayStyle,
+    inRangeTextStyle,
+    rangeStartStyle,
+    rangeEndStyle
   } = props;
 
   const thisDay = new Date(year, month, day);
@@ -69,9 +72,13 @@ export default function Day(props) {
         if (Utils.compareDates(thisDay, selectedStartDate)) {
           daySelectedStyle = {
             ...styles.startDayWrapper,
-            ...props.startDayStyle
+            ...props.startDayStyle,
+            ...rangeStartStyle
           };
-          selectedDayColorStyle = styles.selectedDayLabel;
+          selectedDayColorStyle = {
+            ...selectedDayColorStyle,
+            ...inRangeTextStyle
+          };
         }
         // Apply style for end date
         if (Utils.compareDates(thisDay, selectedEndDate)) {
@@ -80,6 +87,11 @@ export default function Day(props) {
             ...props.endDayStyle
           };
           selectedDayColorStyle = styles.selectedDayLabel;
+          selectedDayColorStyle = {
+            ...selectedDayColorStyle,
+            ...inRangeTextStyle,
+            ...rangeEndStyle
+          };
         }
         // Apply style if start date is the same as end date
         if (
@@ -94,6 +106,10 @@ export default function Day(props) {
         if (Utils.isDateInRange(thisDay, selectedStartDate, selectedEndDate)) {
           daySelectedStyle = styles.inRangeDay;
           selectedDayColorStyle = styles.selectedDayLabel;
+          selectedDayColorStyle = {
+            ...selectedDayColorStyle,
+            ...inRangeTextStyle
+          };
         }
       }
       // Apply style if start date has been selected but end date has not

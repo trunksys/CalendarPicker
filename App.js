@@ -87,6 +87,9 @@ export default class App extends Component {
           selectedMarkedDaysTextColorStyle={{ color: "#fff" }}
           months={MONTHS_ZH}
           weekdays={WEEKDAYS_ZH}
+          inRangeTextStyle={{ color: "white" }}
+          rangeStartStyle={{ backgroundColor: "red" }}
+          rangeEndStyle={{ backgroundColor: "pink" }}
         />
 
         <View>

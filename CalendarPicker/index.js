@@ -182,7 +182,10 @@ export default class CalendarPicker extends Component {
       headerSideTextStyle,
       headerMidTextStyle,
       weekDaysTextStyle,
-      weekDaysStyle
+      weekDaysStyle,
+      inRangeTextStyle,
+      rangeStartStyle,
+      rangeEndStyle
     } = this.props;
 
     return (
@@ -230,6 +233,9 @@ export default class CalendarPicker extends Component {
             selectedMarkedDaysColorStyle={selectedMarkedDaysColorStyle}
             selectedMarkedDaysTextColorStyle={selectedMarkedDaysTextColorStyle}
             textStyle={textStyle}
+            inRangeTextStyle={inRangeTextStyle}
+            rangeStartStyle={rangeStartStyle}
+            rangeEndStyle={rangeEndStyle}
           />
         </View>
       </Swiper>

@@ -185,13 +185,15 @@ export default class CalendarPicker extends Component {
       weekDaysStyle,
       inRangeTextStyle,
       rangeStartStyle,
-      rangeEndStyle
+      rangeEndStyle,
+      calendarStyle
     } = this.props;
 
     return (
       <Swiper
         onSwipe={direction => this.onSwipe(direction)}
         config={swipeConfig}
+        style={calendarStyle}
       >
         <View syles={styles.calendar}>
           <HeaderControls

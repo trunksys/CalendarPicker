@@ -86,8 +86,8 @@ export default function Day(props) {
             ...styles.endDayWrapper,
             ...props.endDayStyle
           };
-          selectedDayColorStyle = styles.selectedDayLabel;
           selectedDayColorStyle = {
+            ...styles.selectedDayLabel,
             ...selectedDayColorStyle,
             ...inRangeTextStyle,
             ...rangeEndStyle
@@ -100,14 +100,16 @@ export default function Day(props) {
           Utils.compareDates(selectedEndDate, selectedStartDate)
         ) {
           daySelectedStyle = styles.selectedDay;
-          selectedDayColorStyle = styles.selectedDayLabel;
+          selectedDayColorStyle = {
+            ...styles.selectedDayLabel,
+            ...inRangeTextStyle
+          };
         }
         // Apply style if this day is in range
         if (Utils.isDateInRange(thisDay, selectedStartDate, selectedEndDate)) {
           daySelectedStyle = styles.inRangeDay;
-          selectedDayColorStyle = styles.selectedDayLabel;
           selectedDayColorStyle = {
-            ...selectedDayColorStyle,
+            ...styles.selectedDayLabel,
             ...inRangeTextStyle
           };
         }
@@ -119,7 +121,10 @@ export default function Day(props) {
         Utils.compareDates(thisDay, selectedStartDate)
       ) {
         daySelectedStyle = styles.selectedDay;
-        selectedDayColorStyle = styles.selectedDayLabel;
+        selectedDayColorStyle = {
+          ...styles.selectedDayLabel,
+          ...inRangeTextStyle
+        };
       }
     }
   }
@@ -149,8 +154,8 @@ export default function Day(props) {
           style={[
             styles.dayLabel,
             textStyle,
-            selectedDayColorStyle,
-            isMark ? selectedMarkedDaysTextColorStyle : {}
+            isMark ? selectedMarkedDaysTextColorStyle : {},
+            selectedDayColorStyle
           ]}
         >
           {day}

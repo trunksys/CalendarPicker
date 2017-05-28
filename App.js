@@ -83,13 +83,12 @@ export default class App extends Component {
           allowRangeSelection
           onDateChange={this.onDateChange}
           markedDays={["2017/5/10", "2017/5/1"]}
+          selectedTextColor={"#fff"}
           selectedMarkedDaysColorStyle={{ backgroundColor: "red" }}
           selectedMarkedDaysTextColorStyle={{ color: "#fff" }}
           months={MONTHS_ZH}
           weekdays={WEEKDAYS_ZH}
           inRangeTextStyle={{ color: "white" }}
-          rangeStartStyle={{ backgroundColor: "red" }}
-          rangeEndStyle={{ backgroundColor: "pink" }}
         />
 
         <View>

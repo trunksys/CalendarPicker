@@ -84,6 +84,7 @@ export default function DaysGridView(props) {
                 }
                 rangeStartStyle={rangeStartStyle}
                 rangeEndStyle={rangeEndStyle}
+                inRangeTextStyle={inRangeTextStyle}
               />
             );
           }
@@ -112,6 +113,8 @@ export default function DaysGridView(props) {
               selectedMarkedDaysTextColorStyle={
                 selectedMarkedDaysTextColorStyle
               }
+              rangeStartStyle={rangeStartStyle}
+              rangeEndStyle={rangeEndStyle}
               inRangeTextStyle={inRangeTextStyle}
             />
           );

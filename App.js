@@ -81,6 +81,8 @@ export default class App extends Component {
           previousTitle="上月"
           nextTitle="下月"
           allowRangeSelection
+          selectedStartDate={new Date()}
+          selectedEndDate={new Date()}
           onDateChange={this.onDateChange}
           markedDays={["2017/5/10", "2017/5/1"]}
           selectedTextColor={"#fff"}
